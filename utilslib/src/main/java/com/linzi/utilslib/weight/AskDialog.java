@@ -3,6 +3,8 @@ package com.linzi.utilslib.weight;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +34,16 @@ public class AskDialog extends Dialog {
     private void init() {
         view = LayoutInflater.from(mContext).inflate(R.layout.dialog_ask_layout, null);
         vh = new ViewHolder(view);
+
+//        app:cardCornerRadius="10dp"
+//        app:cardMaxElevation="5dp"
+//        app:cardBackgroundColor="#ffffff"
+//        app:cardPreventCornerOverlap="true"
+        vh.card.setRadius(20);
+        vh.card.setMaxCardElevation(15);
+        vh.card.setCardBackgroundColor(Color.parseColor("#ffffff"));
+        vh.card.setPreventCornerOverlap(true);
+
         this.onBackPressed();
         this.setContentView(view);
         this.setCanceledOnTouchOutside(true);
@@ -106,12 +118,13 @@ public class AskDialog extends Dialog {
         super.show();
     }
 
-    private static class ViewHolder {
+    class ViewHolder {
         public View rootView;
         public TextView tvTitle;
         public TextView tvContext;
         public TextView tvClose;
         public TextView tvSubmit;
+        public CardView card;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
@@ -119,6 +132,7 @@ public class AskDialog extends Dialog {
             this.tvContext = (TextView) rootView.findViewById(R.id.tv_context);
             this.tvClose = (TextView) rootView.findViewById(R.id.tv_close);
             this.tvSubmit = (TextView) rootView.findViewById(R.id.tv_submit);
+            this.card = (CardView) rootView.findViewById(R.id.cardview);
         }
 
     }
