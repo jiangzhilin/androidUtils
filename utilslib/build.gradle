@@ -24,17 +24,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    provided fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+    provided 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.yanzhenjie:permission:1.1.2'
-    compile 'com.alibaba:fastjson:1.2.44'
-    compile 'com.youth.banner:banner:1.4.10'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'org.xutils:xutils:3.3.36'
-    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
+    provided 'com.github.bumptech.glide:glide:3.7.0'
+    provided 'com.yanzhenjie:permission:1.1.2'
+    provided 'com.alibaba:fastjson:1.2.44'
+    provided 'com.youth.banner:banner:1.4.10'
+    provided 'com.jakewharton:butterknife:7.0.1'
+    provided 'org.xutils:xutils:3.3.36'
+    provided 'com.android.support:cardview-v7:26.0.0-alpha1'
 }
