@@ -1,24 +1,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.github.jiangzhilin:androidUtils:1.0.2@aar'```
-## 主项目需要引入主依赖 
-```compile 'com.android.support:cardview-v7:26.0.0-alpha1'```
-## 项目根gradle 引入 
-```
-dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
-    }
-}
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
-}
-```
+```compile 'com.androidUtils:androidUtils:1.0.3'```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
@@ -63,3 +46,30 @@ new AskDialog(this,this)
 
 ## view转bitmap
 ```View2Bitmap.getViewBitmap(View view) return Bitmap```
+
+## LoadingDialog
+```LoadDialog.show(this);```
+
+## 安全数字键盘
+```new PopNumKeyBordeUtils(this)
+                        .setView()
+                        .setDefValues("")
+                        .setKeyListenner(new PopNumKeyBordeUtils.KeyClickListener() {
+                            @Override
+                            public void keyListener(StringBuffer values_key) {
+
+                            }
+                        })
+                        .setMaxLenght(6)
+                        .setSubmitListenner(new PopNumKeyBordeUtils.SubmitListener() {
+                            @Override
+                            public void submitListener(View view) {
+
+                            }
+                        })
+                        .show(bt_dialog);
+                break;
+```
+
+## 仿支付宝滚动数字显示
+```txt.showNumberWithAnimation(Float.valueOf(1000), CountNumberView.FLOATREGEX);```
