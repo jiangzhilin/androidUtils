@@ -1,0 +1,22 @@
+<resources>
+    <!-- Base application theme. -->
+
+    <!-- ActionSheet进出动画 -->
+    <style name="ActionSheetDialogAnimation" >
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+    </style>
+    <!-- ActionSheet进出动画 -->
+    <style name="ActionSheetDialogAnimation2" >
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit</item>
+    </style>
+
+    <!-- ActionSheet进出动画 -->
+    <style name="ActionSheetPopAnimation" >
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit</item>
+    </style>
+
+
+</resources>
