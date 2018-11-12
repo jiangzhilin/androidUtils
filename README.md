@@ -1,3 +1,5 @@
+[！[下载]（https://api.bintray.com/packages/jiangzhilin/jiangzhilin/androidUtils/images/download.svg）]（https://bintray.com/jiangzhilin/jiangzhilin/androidUtils/_latestVersion）
+
 # androidUtils
 
 ## gradle集成依赖 
