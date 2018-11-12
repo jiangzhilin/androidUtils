@@ -3,7 +3,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:1.0.3'```
+```compile 'com.androidUtils:androidUtils:1.0.4'```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
@@ -83,3 +83,6 @@ new PopNumKeyBordeUtils(this)
         android:layout_width="100dp"
         android:layout_height="50dp"/>
 ```
+
+## 获取最新的省市区
+```List<PCAEntity> pca=JSONFileToStrUtils.getArea(this);```
