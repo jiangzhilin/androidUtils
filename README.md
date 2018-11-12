@@ -1,4 +1,4 @@
-[！[下载]（https://api.bintray.com/packages/jiangzhilin/jiangzhilin/androidUtils/images/download.svg）]（https://bintray.com/jiangzhilin/jiangzhilin/androidUtils/_latestVersion）
+[ ![Download](https://api.bintray.com/packages/jiangzhilin/jiangzhilin/androidUtils/images/download.svg) ](https://bintray.com/jiangzhilin/jiangzhilin/androidUtils/_latestVersion)
 
 # androidUtils
 
