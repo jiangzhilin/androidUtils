@@ -76,3 +76,10 @@ new PopNumKeyBordeUtils(this)
 
 ## 仿支付宝滚动数字显示
 ```txt.showNumberWithAnimation(Float.valueOf(1000), CountNumberView.FLOATREGEX);```
+
+## 仿苹果SwitchButton
+```
+<com.linzi.utilslib.weight.UISwitchButton
+        android:layout_width="100dp"
+        android:layout_height="50dp"/>
+```
