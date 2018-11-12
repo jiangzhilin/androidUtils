@@ -51,7 +51,8 @@ new AskDialog(this,this)
 ```LoadDialog.show(this);```
 
 ## 安全数字键盘
-```new PopNumKeyBordeUtils(this)
+```
+new PopNumKeyBordeUtils(this)
                         .setView()
                         .setDefValues("")
                         .setKeyListenner(new PopNumKeyBordeUtils.KeyClickListener() {
