@@ -5,10 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.alibaba.fastjson.JSONObject;
+import com.linzi.utilslib.entity.PCAEntity;
+import com.linzi.utilslib.utils.JSONFileToStrUtils;
 import com.linzi.utilslib.weight.AskDialog;
 import com.linzi.utilslib.weight.CountNumberView;
 import com.linzi.utilslib.weight.LoadDialog;
 import com.linzi.utilslib.weight.PopNumKeyBordeUtils;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_keybord.setOnClickListener(this);
 
         txt.showNumberWithAnimation(Float.valueOf(1000), CountNumberView.FLOATREGEX);
+
+        List<PCAEntity> pca=JSONFileToStrUtils.getArea(this);
+        System.out.println(pca.get(0).getName());
     }
 
     @Override
