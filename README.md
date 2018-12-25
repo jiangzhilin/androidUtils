@@ -71,7 +71,6 @@ new PopNumKeyBordeUtils(this)
                             }
                         })
                         .show(bt_dialog);
-                break;
 ```
 
 ## 仿支付宝滚动数字显示
