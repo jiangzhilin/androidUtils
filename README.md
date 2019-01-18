@@ -50,15 +50,19 @@ new AskDialog(this,this)
 ```View2Bitmap.getViewBitmap(View view) return Bitmap```
 
 ## LoadingDialog
-```LoadDialog.show(this);
-   LoadDialog.show(this,int size);```
+```
+LoadDialog.show(this);
+LoadDialog.show(this,int size);
+```
 
 ## 默认系统TOAST提示
 ### 初始化：
 ```NToast.init(Context);```
 ### 使用：
-```NToast.show(String);
-   NToast.show(String,int);```
+```
+NToast.show(String);
+NToast.show(String,int);
+```
 
 ## 安全数字键盘
 ```
