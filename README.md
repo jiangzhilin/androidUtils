@@ -3,7 +3,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:1.0.4'```
+```compile 'com.androidUtils:androidUtils:1.0.6'```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
@@ -50,7 +50,19 @@ new AskDialog(this,this)
 ```View2Bitmap.getViewBitmap(View view) return Bitmap```
 
 ## LoadingDialog
-```LoadDialog.show(this);```
+```
+LoadDialog.show(this);
+LoadDialog.show(this,int size);
+```
+
+## 默认系统TOAST提示
+### 初始化：
+```NToast.init(Context);```
+### 使用：
+```
+NToast.show(String);
+NToast.show(String,int);
+```
 
 ## 安全数字键盘
 ```
@@ -71,7 +83,6 @@ new PopNumKeyBordeUtils(this)
                             }
                         })
                         .show(bt_dialog);
-                break;
 ```
 
 ## 仿支付宝滚动数字显示
