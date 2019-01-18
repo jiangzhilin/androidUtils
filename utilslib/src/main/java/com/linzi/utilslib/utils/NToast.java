@@ -22,4 +22,10 @@ public class NToast {
             Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
         }
     }
+
+    public static void show(String msg,int time){
+        if(mContext!=null){
+            Toast.makeText(mContext,msg,time).show();
+        }
+    }
 }

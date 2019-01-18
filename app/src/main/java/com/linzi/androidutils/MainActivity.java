@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             case R.id.bt_dialog:
-                LoadDialog.show(this);
+                LoadDialog.show(this,50);
                 break;
             case R.id.bt_keybord:
                 new PopNumKeyBordeUtils(this)

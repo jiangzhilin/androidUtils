@@ -7,12 +7,11 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.linzi.utilslib.R;
-import com.linzi.utilslib.utils.NToast;
 
 
 public class LoadDialog extends Dialog {
@@ -31,6 +30,8 @@ public class LoadDialog extends Dialog {
     private String tipMsg;
 
     private TextView mShowMessage;
+
+    private ProgressWheel progressWheel;
 
     /**
      * the LoadDialog constructor
@@ -58,8 +59,37 @@ public class LoadDialog extends Dialog {
         attributesParams.dimAmount = 0.5f;
         window.setAttributes(attributesParams);
 
-        window.setLayout(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        window.setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
+
+    public LoadDialog(final Context ctx, boolean canNotCancel,int size, String tipMsg) {
+        super(ctx);
+
+        this.canNotCancel = canNotCancel;
+        this.tipMsg = tipMsg;
+        this.getContext().setTheme(android.R.style.Theme_InputMethod);
+        setContentView(R.layout.layout_dialog_loading);
+
+        progressWheel=this.findViewById(R.id.progress_wheel);
+        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(dip2px(ctx,size/2),dip2px(ctx,size/2));
+        progressWheel.setLayoutParams(params);
+        progressWheel.setBarWidth(size/7);
+
+        if (!TextUtils.isEmpty(this.tipMsg)) {
+            mShowMessage = (TextView) findViewById(R.id.show_message);
+            mShowMessage.setText(this.tipMsg);
+        }
+
+        Window window = getWindow();
+        WindowManager.LayoutParams attributesParams = window.getAttributes();
+        attributesParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        attributesParams.dimAmount = 0.5f;
+        window.setAttributes(attributesParams);
+
+        window.setLayout(dip2px(ctx,size),dip2px(ctx,size));
+    }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -79,6 +109,9 @@ public class LoadDialog extends Dialog {
      */
     public static void show(Context context) {
         show(context, null, false);
+    }
+    public static void show(Context context,int size) {
+        show(context, null,size, false);
     }
 
     /**
@@ -111,6 +144,19 @@ public class LoadDialog extends Dialog {
         loadDialog.show();
     }
 
+    private static void show(Context context, String message,int size, boolean isCancel) {
+        if (context instanceof Activity) {
+            if (((Activity) context).isFinishing()) {
+                return;
+            }
+        }
+        if (loadDialog != null && loadDialog.isShowing()) {
+            return;
+        }
+        loadDialog = new LoadDialog(context, isCancel,size, message);
+        loadDialog.show();
+    }
+
     /**
      * dismiss the mDialogTextView
      */
@@ -138,5 +184,11 @@ public class LoadDialog extends Dialog {
             e.printStackTrace();
             loadDialog = null;
         }
+    }
+
+    //将dp转换为px
+    private static int dip2px(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 }
