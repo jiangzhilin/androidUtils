@@ -52,6 +52,13 @@ new AskDialog(this,this)
 ## LoadingDialog
 ```LoadDialog.show(this);```
 
+## 默认系统TOAST提示
+### 初始化：
+```NToast.init(Context);```
+### 使用：
+```NToast.show(String);```
+```NToast.show(String,int);```
+
 ## 安全数字键盘
 ```
 new PopNumKeyBordeUtils(this)
