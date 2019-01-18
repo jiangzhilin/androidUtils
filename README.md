@@ -3,7 +3,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:1.0.4'```
+```compile 'com.androidUtils:androidUtils:1.0.5'```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
