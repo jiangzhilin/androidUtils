@@ -168,4 +168,18 @@ new PhotoPicker().setCallback(new PhotoPicker.photoPickerBack() {
                 return new ClassicsFooter(context).setDrawableSize(20);
             }
         });
+        
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+    @Override
+    public void onRefresh(RefreshLayout refreshlayout) {
+        refreshlayout.finishRefresh(2000);
+    }
+});
+refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+    @Override
+    public void onLoadmore(RefreshLayout refreshlayout) {
+        refreshlayout.finishLoadmore(2000);
+    }
+});
+        
 ```
