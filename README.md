@@ -147,10 +147,10 @@ new PhotoPicker().setCallback(new PhotoPicker.photoPickerBack() {
 
 ## 上下拉刷新加载
 ```
-<com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/refresh"/>
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/refresh"/>
  
         //设置全局的Header构建器
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
@@ -168,18 +168,18 @@ new PhotoPicker().setCallback(new PhotoPicker.photoPickerBack() {
                 return new ClassicsFooter(context).setDrawableSize(20);
             }
         });
-        
+        //设置监听
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
-    @Override
-    public void onRefresh(RefreshLayout refreshlayout) {
-        refreshlayout.finishRefresh(2000);
-    }
-});
-refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
-    @Override
-    public void onLoadmore(RefreshLayout refreshlayout) {
-        refreshlayout.finishLoadmore(2000);
-    }
-});
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                refreshlayout.finishRefresh(2000);
+            }
+        });
+        refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadmore(2000);
+            }
+        });
         
 ```
