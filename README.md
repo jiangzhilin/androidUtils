@@ -3,7 +3,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:1.0.6'```
+```compile 'com.androidUtils:androidUtils:1.0.7'```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
@@ -100,3 +100,72 @@ new PopNumKeyBordeUtils(this)
 
 ## 从JSON文件获取JSON字符串
 ```JSONFileToStrUtils.getJson(String fileName,Context context); return String```
+
+## 获取权限
+```
+PermissionUtile.getSysPermission(MainActivity.this, new PermissionUtile.permissionCallback() {
+            @Override
+            public void getAll() {
+                NToast.show("所有权限已获取");
+            }
+
+            @Override
+            public void settingBack() {
+
+            }
+
+            @Override
+            public void notinManifast(String permission) {
+
+            }
+        });
+getFilesPermission();
+getCusPermission();
+```
+
+## 图片选择器
+### 初始化
+```
+PhotoPicker.init(new ImageLoader() {
+            @Override
+            public void loadImage(Context context, ImageView imageView, String s, int i) {
+                Glide.with(context)
+                        .load(s)
+                        .into(imageView);
+            }
+        });
+```
+### 调用
+```
+new PhotoPicker().setCallback(new PhotoPicker.photoPickerBack() {
+                    @Override
+                    public void getFinalPath(List<String> realPath, List<String> cutPath, List<String> compress) {
+                        Log.d("选中数据", "getFinalPath: "+realPath);
+                    }
+                }).show(this,null);
+```
+
+## 上下拉刷新加载
+```
+<com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/refresh"/>
+ 
+        //设置全局的Header构建器
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
+            @Override
+            public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
+                layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);//全局设置主题颜色
+                return new ClassicsHeader(context);//.setTimeFormat(new DynamicTimeFormat("更新于 %s"));//指定为经典Header，默认是 贝塞尔雷达Header
+            }
+        });
+        //设置全局的Footer构建器
+        SmartRefreshLayout.setDefaultRefreshFooterCreator(new DefaultRefreshFooterCreator() {
+            @Override
+            public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
+                //指定为经典Footer，默认是 BallPulseFooter
+                return new ClassicsFooter(context).setDrawableSize(20);
+            }
+        });
+```
