@@ -59,4 +59,4 @@ publish {
     desc = 'android开发工具'
     website = 'https://github.com/jiangzhilin/androidUtils'
 }
-//gradlew bintrayUpload -PbintrayUser=jiangzhilin -PbintrayKey=f56e5cfdda679f58654f73b33d8aa69af7eca403 -PdryRun=false
+
