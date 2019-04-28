@@ -3,7 +3,16 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:1.0.7'```
+```compile 'com.androidUtils:androidUtils:[ ![Download](https://api.bintray.com/packages/jiangzhilin/jiangzhilin/androidUtils/images/download.svg) ](https://bintray.com/jiangzhilin/jiangzhilin/androidUtils/_latestVersion)'```
+## 解决依赖库java版本不一致的问题
+```android{
+      defaultConfig{
+          compileOptions {
+              sourceCompatibility JavaVersion.VERSION_1_8
+              targetCompatibility JavaVersion.VERSION_1_8
+          }
+      }
+   }```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
