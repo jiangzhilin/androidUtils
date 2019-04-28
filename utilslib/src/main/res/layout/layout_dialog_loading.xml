@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center">
 
         <com.linzi.utilslib.weight.ProgressWheel
@@ -25,8 +25,9 @@
             android:id="@+id/show_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:paddingRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text=""
             android:textColor="@android:color/white"
             android:textSize="16sp"

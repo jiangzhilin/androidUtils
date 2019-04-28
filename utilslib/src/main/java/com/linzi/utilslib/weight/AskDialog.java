@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.widget.CardView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,10 +38,11 @@ public class AskDialog extends Dialog {
 //        app:cardMaxElevation="5dp"
 //        app:cardBackgroundColor="#ffffff"
 //        app:cardPreventCornerOverlap="true"
-        vh.card.setRadius(20);
-        vh.card.setMaxCardElevation(15);
-        vh.card.setCardBackgroundColor(Color.parseColor("#ffffff"));
-        vh.card.setPreventCornerOverlap(true);
+//        vh.card.setRadius(20);
+//        vh.card.setMaxCardElevation(15);
+//        vh.card.setCardBackgroundColor(Color.parseColor("#ffffff"));
+//        vh.card.setPreventCornerOverlap(true);
+//        vh.card.setRadius(20);
 
         this.onBackPressed();
         this.setContentView(view);
@@ -70,10 +70,16 @@ public class AskDialog extends Dialog {
         return this;
     }
 
-    public AskDialog setCloseListener(String close_txt, View.OnClickListener listener) {
+    public AskDialog setCloseListener(String close_txt, final View.OnClickListener listener) {
         vh.tvClose.setVisibility(View.VISIBLE);
         vh.tvClose.setText(close_txt);
-        vh.tvClose.setOnClickListener(listener);
+        vh.tvClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+                listener.onClick(v);
+            }
+        });
         return this;
     }
 
@@ -113,6 +119,11 @@ public class AskDialog extends Dialog {
         return this;
     }
 
+    public AskDialog setRadius(int radius){
+        vh.card.setRadius(radius);
+        return this;
+    }
+
     @Override
     public void show() {
         super.show();
@@ -124,7 +135,7 @@ public class AskDialog extends Dialog {
         public TextView tvContext;
         public TextView tvClose;
         public TextView tvSubmit;
-        public CardView card;
+        public RCRelativeLayout card;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
@@ -132,7 +143,7 @@ public class AskDialog extends Dialog {
             this.tvContext = (TextView) rootView.findViewById(R.id.tv_context);
             this.tvClose = (TextView) rootView.findViewById(R.id.tv_close);
             this.tvSubmit = (TextView) rootView.findViewById(R.id.tv_submit);
-            this.card = (CardView) rootView.findViewById(R.id.cardview);
+            this.card = (RCRelativeLayout) rootView.findViewById(R.id.cardview);
         }
 
     }

@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -51,6 +52,11 @@ public class LoadDialog extends Dialog {
         if (!TextUtils.isEmpty(this.tipMsg)) {
             mShowMessage = (TextView) findViewById(R.id.show_message);
             mShowMessage.setText(this.tipMsg);
+            mShowMessage.setVisibility(View.VISIBLE);
+        }else{
+            if(mShowMessage!=null) {
+                mShowMessage.setVisibility(View.GONE);
+            }
         }
 
         Window window = getWindow();
@@ -60,6 +66,13 @@ public class LoadDialog extends Dialog {
         window.setAttributes(attributesParams);
 
         window.setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+    }
+
+    public void setMessage(String msg){
+        if(mShowMessage!=null){
+            mShowMessage.setVisibility(View.VISIBLE);
+            mShowMessage.setText(msg);
+        }
     }
 
     public LoadDialog(final Context ctx, boolean canNotCancel,int size, String tipMsg) {
@@ -78,6 +91,11 @@ public class LoadDialog extends Dialog {
         if (!TextUtils.isEmpty(this.tipMsg)) {
             mShowMessage = (TextView) findViewById(R.id.show_message);
             mShowMessage.setText(this.tipMsg);
+            mShowMessage.setVisibility(View.VISIBLE);
+        }else{
+            if(mShowMessage!=null) {
+                mShowMessage.setVisibility(View.GONE);
+            }
         }
 
         Window window = getWindow();
@@ -138,6 +156,9 @@ public class LoadDialog extends Dialog {
             }
         }
         if (loadDialog != null && loadDialog.isShowing()) {
+            if(!TextUtils.isEmpty(message)){
+                loadDialog.setMessage(message);
+            }
             return;
         }
         loadDialog = new LoadDialog(context, isCancel, message);
@@ -151,6 +172,9 @@ public class LoadDialog extends Dialog {
             }
         }
         if (loadDialog != null && loadDialog.isShowing()) {
+            if(!TextUtils.isEmpty(message)){
+                loadDialog.setMessage(message);
+            }
             return;
         }
         loadDialog = new LoadDialog(context, isCancel,size, message);

@@ -3,24 +3,27 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.jiangzhilin'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 16
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 
     android {
         lintOptions {
@@ -36,15 +39,32 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.yanzhenjie:permission:1.1.2'
-    compile 'com.alibaba:fastjson:1.2.44'
-    compile 'com.youth.banner:banner:1.4.10'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'org.xutils:xutils:3.3.36'
-    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    //权限
+    api 'com.yanzhenjie:permission:2.0.0-rc12'
+    //json
+    api 'com.alibaba:fastjson:1.2.44'
+    //banner视图
+    api 'com.youth.banner:banner:1.4.10'
+    //基础框架
+    api 'org.xutils:xutils:3.3.36'
+    //上下拉刷新
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-19'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-19'//没有使用特殊Header，可以不加这行
+    api 'com.android.support:design:27.+'//版本随意（非必须，引用可以解决无法预览问题）
+
+    //图片/视频选择、预览、编辑与拍照
+    api 'com.github.guoxiaoxing:phoenix:1.0.15'
+    //选填 - 图片压缩，开启功能：Phoenix.with().enableCompress(true)，获取结果：MediaEntity.getCompressPath()
+    api 'com.github.guoxiaoxing:phoenix-compress-picture:1.0.15'
+    //选填 - 视频压缩，开启功能：Phoenix.with().enableCompress(true)，获取结果：MediaEntity.getCompressPath()
+    api 'com.github.guoxiaoxing:phoenix-compress-video:1.0.15'
+
+    api "com.airbnb.android:lottie:2.5.+"
+
+    testImplementation 'junit:junit:4.12'
+
 }
 
 
@@ -55,7 +75,7 @@ publish {
     userOrg = 'jiangzhilin'  // bintray用户名
     groupId = 'com.androidUtils'  // 模块目录
     artifactId = 'androidUtils'  // 此字段为你的模块名称，唯一标识符
-    publishVersion = '1.0.6'  // 版本号
+    publishVersion = '1.0.16'  // 版本号
     desc = 'android开发工具'
     website = 'https://github.com/jiangzhilin/androidUtils'
 }
