@@ -5,14 +5,16 @@
 ## gradle集成依赖 
 ```compile 'com.androidUtils:androidUtils:1.0.16'```
 ## 解决依赖库java版本不一致的问题
-```android{
+```
+android{
       defaultConfig{
           compileOptions {
               sourceCompatibility JavaVersion.VERSION_1_8
               targetCompatibility JavaVersion.VERSION_1_8
           }
       }
-   }```
+   }
+```
 ## 简单系统消息dialog调用
 ```
 new AskDialog(this,this)
