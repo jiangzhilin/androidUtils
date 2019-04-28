@@ -3,7 +3,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:[ ![Download](https://api.bintray.com/packages/jiangzhilin/jiangzhilin/androidUtils/images/download.svg) ](https://bintray.com/jiangzhilin/jiangzhilin/androidUtils/_latestVersion)'```
+```compile 'com.androidUtils:androidUtils:1.0.16'```
 ## 解决依赖库java版本不一致的问题
 ```android{
       defaultConfig{
