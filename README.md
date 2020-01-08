@@ -1,5 +1,11 @@
 [ ![Download](https://api.bintray.com/packages/jiangzhilin/jiangzhilin/androidUtils/images/download.svg) ](https://bintray.com/jiangzhilin/jiangzhilin/androidUtils/_latestVersion)
 
+<a href='https://bintray.com/jiangzhilin/jiangzhilin/androidUtils?source=watch' alt='Get automatic notifications about new "androidUtils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a><a href='https://bintray.com/jiangzhilin/jiangzhilin/androidUtils?source=watch' alt='Get automatic notifications about new "androidUtils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+
+<a href='https://bintray.com/jiangzhilin/jiangzhilin/androidUtils?source=watch' alt='Get automatic notifications about new "androidUtils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
+
+<a href='https://bintray.com/jiangzhilin/jiangzhilin/androidUtils?source=watch' alt='Get automatic notifications about new "androidUtils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_greyscale.png'></a>
+
 # androidUtils
 
 ## gradle集成依赖 
