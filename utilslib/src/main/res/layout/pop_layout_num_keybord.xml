@@ -19,7 +19,7 @@
                 android:id="@+id/ll_pwd"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:gravity="bottom|center_horizontal"
                 android:background="#fff"
                 android:orientation="vertical">

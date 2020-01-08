@@ -3,7 +3,6 @@ package com.linzi.utilslib.weight;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +30,7 @@ public class AskDialog extends Dialog {
     }
 
     private void init() {
-        view = LayoutInflater.from(mContext).inflate(R.layout.dialog_ask_layout, null);
+        view = LayoutInflater.from(mContext).inflate(R.layout.linzi_dialog_ask_layout, null);
         vh = new ViewHolder(view);
 
 //        app:cardCornerRadius="10dp"
@@ -139,11 +138,11 @@ public class AskDialog extends Dialog {
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
-            this.tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-            this.tvContext = (TextView) rootView.findViewById(R.id.tv_context);
-            this.tvClose = (TextView) rootView.findViewById(R.id.tv_close);
-            this.tvSubmit = (TextView) rootView.findViewById(R.id.tv_submit);
-            this.card = (RCRelativeLayout) rootView.findViewById(R.id.cardview);
+            this.tvTitle = (TextView) rootView.findViewById(R.id.lz_title);
+            this.tvContext = (TextView) rootView.findViewById(R.id.lz_context);
+            this.tvClose = (TextView) rootView.findViewById(R.id.lz_close);
+            this.tvSubmit = (TextView) rootView.findViewById(R.id.lz_submit);
+            this.card = (RCRelativeLayout) rootView.findViewById(R.id.lz_cardview);
         }
 
     }

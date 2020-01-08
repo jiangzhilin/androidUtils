@@ -7,7 +7,7 @@
     <com.linzi.utilslib.weight.RCRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cardview"
+        android:id="@+id/lz_cardview"
         android:layout_margin="10dp">
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <TextView
-                    android:id="@+id/tv_title"
+                    android:id="@+id/lz_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000"
@@ -46,7 +46,7 @@
                     android:gravity="center"
                     android:orientation="vertical">
                     <TextView
-                        android:id="@+id/tv_context"
+                        android:id="@+id/lz_context"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#0f0f0f"
@@ -63,7 +63,7 @@
                 android:layout_height="40dp"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/tv_close"
+                    android:id="@+id/lz_close"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
@@ -76,7 +76,7 @@
                     android:layout_height="match_parent"
                     android:background="#c7c7c7"/>
                 <TextView
-                    android:id="@+id/tv_submit"
+                    android:id="@+id/lz_submit"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="match_parent"

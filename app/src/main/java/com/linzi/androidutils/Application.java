@@ -25,7 +25,7 @@ public class Application extends android.app.Application {
         super.onCreate();
 
 //        Bugly.init(getApplicationContext(), "2be855fb36", false);
-        PhotoPicker.init(new ImageLoad() {
+        PhotoPicker.Companion.init(new ImageLoad() {
             @Override
             public void loadImage(Context context, ImageView imageView, String imagePath, int type) {
                 Glide.with(context)

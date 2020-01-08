@@ -165,12 +165,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         .show(bt_dialog);
                 break;
             case R.id.bt_photo:
-                new PhotoPicker().setCallback(new PhotoPicker.photoPickerBack() {
-                    @Override
-                    public void getFinalPath(List<String> realPath, List<String> cutPath, List<String> compress) {
-                        Log.d("选中数据", "getFinalPath: " + realPath);
-                    }
-                }).show(this, null);
+                new PhotoPicker().setCallback((realPath, cutPath, compress)
+                        -> Log.d("选中数据", "getFinalPath: " + realPath)
+                ).Companion.show(this, 1,null);
                 break;
         }
     }

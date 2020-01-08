@@ -1,5 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+
+
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
 group = 'com.github.jiangzhilin'
 
 android {
@@ -25,11 +32,16 @@ android {
 
 
 
-    android {
-        lintOptions {
-            abortOnError false
-        }
+//    android {
+//        lintOptions {
+//            abortOnError false
+//        }
+//    }
+
+    lintOptions {
+        abortOnError false
     }
+
 }
 
 repositories {
@@ -65,6 +77,8 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
 }
 
 
@@ -75,7 +89,7 @@ publish {
     userOrg = 'jiangzhilin'  // bintray用户名
     groupId = 'com.androidUtils'  // 模块目录
     artifactId = 'androidUtils'  // 此字段为你的模块名称，唯一标识符
-    publishVersion = '1.0.16'  // 版本号
+    publishVersion = '1.0.17'  // 版本号
     desc = 'android开发工具'
     website = 'https://github.com/jiangzhilin/androidUtils'
 }
