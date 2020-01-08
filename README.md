@@ -3,7 +3,7 @@
 # androidUtils
 
 ## gradle集成依赖 
-```compile 'com.androidUtils:androidUtils:1.0.16'```
+```compile 'com.androidUtils:androidUtils:1.0.17'```
 ## 解决依赖库java版本不一致的问题
 ```
 android{
@@ -194,3 +194,50 @@ new PhotoPicker().setCallback(new PhotoPicker.photoPickerBack() {
         });
         
 ```
+
+## 开发工具类AppUtils
+```
+//获取设备MAC地址
+getMacAddress()
+//获取当前版本号
+getCurrentVersion()
+//获取当前版本名
+getCurrentVersionName()
+//时间戳转字符串
+long2Time()
+//根据路径跳转安装apk
+jumpInstallApk()
+//根据服务全称判断服务是否运行
+isServiceRunning()
+//根据进程名判断进程是否存活
+isRunningProcess()
+//字符串格式化
+strForMat()
+
+```
+
+## RecycleView通用适配器（BaseRecycleAdapter）
+```
+BaseRecycleAdapter adapter=new BaseRecycleAdapter();
+adapter.setCallBack(new BaseRecycleAdapter.AdapterCallBack() {
+@Override
+public RecyclerView.ViewHolder bindVh(ViewGroup parent) {
+    //TODO 绑定自定义ViewHolder
+    return null;
+}
+
+@Override
+public void bindData(RecyclerView.ViewHolder vh, int position) {
+    //TODO 绑定数据
+}
+
+@Override
+public void onItemClickListener(int position) {
+    //TODO item点击
+}
+});
+recycle.adapter=adapter;
+adapter.setSize(10);
+
+```
+
