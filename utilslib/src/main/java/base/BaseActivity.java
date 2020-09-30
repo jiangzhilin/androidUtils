@@ -17,12 +17,13 @@ import android.widget.TextView;
 
 import com.linzi.utilslib.R;
 import com.linzi.utilslib.utils.StatusBarUtil;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 /**
  * Created by jiang on 2017/10/30.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends RxAppCompatActivity {
 
     public Context mContext;
 

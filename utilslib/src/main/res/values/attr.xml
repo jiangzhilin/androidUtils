@@ -80,4 +80,47 @@
     </declare-styleable>
 
 
+    <declare-styleable name="CardView">
+        <attr name="cardBackgroundColor" format="color" />
+        <attr name="cardCornerRadius" format="dimension" />
+        <attr name="cardElevation" format="dimension" />
+        <attr name="cardMaxElevation" format="dimension" />
+        <attr name="cardUseCompatPadding" format="boolean" />
+        <attr name="cardPreventCornerOverlap" format="boolean" />
+        <attr name="contentPadding" format="dimension" />
+        <attr name="contentPaddingLeft" format="dimension" />
+        <attr name="contentPaddingRight" format="dimension" />
+        <attr name="contentPaddingTop" format="dimension" />
+        <attr name="contentPaddingBottom" format="dimension" />
+
+        <attr name="cardShadowColorStart" format="color" />
+        <attr name="cardShadowColorEnd" format="color" />
+
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+    </declare-styleable>
+
+    <attr format="reference" name="cardViewStyle"/>
+
+    <attr name="lineWidth" format="dimension" />
+    <attr name="lineColor" format="color" />
+    <attr name="stokesColor" format="color" />
+    <attr name="isDrawLine" format="boolean" />
+    <declare-styleable name="PwdEditText">
+        <attr name="height" format="dimension" />
+        <attr name="count" format="integer" />
+        <attr name="lineWidth" />
+        <attr name="lineColor" />
+        <attr name="focusLineColor" format="color" />
+        <attr name="stokesColor" />
+        <attr name="focusStokeColor" format="color" />
+        <attr name="spaceWidth" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="isDrawCircle" format="boolean" />
+        <attr name="isDrawLine"/>
+    </declare-styleable>
+
 </resources>

@@ -50,7 +50,7 @@ object AppUtils {
             for (b in addr) {
                 buf.append(String.format("%02X:", b))
             }
-            if (buf.length > 0) {
+            if (buf.isNotEmpty()) {
                 buf.deleteCharAt(buf.length - 1)
             }
             macAddress = buf.toString()

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -12,7 +13,6 @@ import com.linzi.utilslib.entity.PCAEntity;
 import com.linzi.utilslib.utils.JSONFileToStrUtils;
 import com.linzi.utilslib.utils.NToast;
 import com.linzi.utilslib.utils.PermissionUtile;
-//import com.linzi.utilslib.utils.PhotoPicker;
 import com.linzi.utilslib.utils.PhotoPicker;
 import com.linzi.utilslib.weight.AskDialog;
 import com.linzi.utilslib.weight.CountNumberView;
@@ -23,10 +23,11 @@ import java.util.List;
 
 import base.BaseActivity;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener {
 
     private Button bt_sys;
     private Button bt_dialog;
+    private Button bt_dialog2;
     private Button bt_keybord;
     private Button bt_photo;
     private Button bt_shuaxin;
@@ -88,7 +89,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         NToast.showWithIcon("自定义视图的toast",R.drawable.icon_loading);
 
-        bt_shuaxin.setOnClickListener(new View.OnClickListener() {
+        bt_shuaxin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Intent intent = new Intent(MainActivity.this, RefreshActivity.class);
@@ -96,32 +97,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
         });
 
-        bt_lottie.setOnClickListener(new View.OnClickListener() {
+        bt_lottie.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(ed_msg.getText().toString().isEmpty()){
                     return;
                 }
-//                Intent intent = new Intent(MainActivity.this, AssetActivity.class);
-//                intent.putExtra("TAG",ed_msg.getText().toString());
-//                startActivity(intent);
             }
         });
-        bt_hello.setOnClickListener(new View.OnClickListener() {
+        bt_hello.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, LottieActivity.class);
-//                startActivity(intent);
             }
         });
-
-//        NewbieGuide.with(MainActivity.this)
-//                .setLabel("guide1")
-//                .alwaysShow(true)
-//                .addGuidePage(GuidePage.newInstance()
-//                        .addHighLight(bt_sys)
-//                        .setLayoutRes(R.layout.guide_layout_1))
-//                .show();
     }
 
     @Override
@@ -133,7 +121,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         .setMessage("你好啊，我是系统组件")
                         .setCloseListener()
                         .setRadius(10)
-                        .setSubmitListener(new View.OnClickListener() {
+                        .setSubmitListener(new OnClickListener() {
                             @Override
                             public void onClick(View view) {
 
@@ -142,7 +130,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         .show();
                 break;
             case R.id.bt_dialog:
-                LoadDialog.show(this, 50);
+                LoadDialog.show(this);
                 break;
             case R.id.bt_keybord:
                 new PopNumKeyBordeUtils(this)
@@ -154,7 +142,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                             }
                         })
-                        .setMaxLenght(12)
+                        .setMaxLenght(6)
                         .setRedom(true)
                         .setSubmitListenner(new PopNumKeyBordeUtils.SubmitListener() {
                             @Override
@@ -171,4 +159,52 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
     }
+
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.bt_sys:
+//                new AskDialog(this, this)
+//                        .setWinTitle("系统消息")
+//                        .setMessage("你好啊，我是系统组件")
+//                        .setCloseListener()
+//                        .setRadius(10)
+//                        .setSubmitListener(new OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//
+//                            }
+//                        })
+//                        .show();
+//                break;
+//            case R.id.bt_dialog:
+//                LoadDialog.show(this);
+//                break;
+//            case R.id.bt_keybord:
+//                new PopNumKeyBordeUtils(this)
+//                        .setView()
+//                        .setDefValues("")
+//                        .setKeyListenner(new PopNumKeyBordeUtils.KeyClickListener() {
+//                            @Override
+//                            public void keyListener(StringBuffer values_key) {
+//
+//                            }
+//                        })
+//                        .setMaxLenght(12)
+//                        .setRedom(true)
+//                        .setSubmitListenner(new PopNumKeyBordeUtils.SubmitListener() {
+//                            @Override
+//                            public void submitListener(View view) {
+//
+//                            }
+//                        })
+//                        .show(bt_dialog);
+//                break;
+//            case R.id.bt_photo:
+////                new PhotoPicker().setCallback((realPath, cutPath, compress)
+////                        -> Log.d("选中数据", "getFinalPath: " + realPath)
+////                ).Companion.show(this, 1,null);
+//                break;
+//        }
+//    }
 }

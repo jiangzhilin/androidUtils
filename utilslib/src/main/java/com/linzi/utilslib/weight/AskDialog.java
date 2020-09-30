@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.linzi.utilslib.R;
+import com.linzi.utilslib.weight.card.CardView;
 
 /**
  * Created by jiang on 2018/2/26.
@@ -32,16 +33,6 @@ public class AskDialog extends Dialog {
     private void init() {
         view = LayoutInflater.from(mContext).inflate(R.layout.linzi_dialog_ask_layout, null);
         vh = new ViewHolder(view);
-
-//        app:cardCornerRadius="10dp"
-//        app:cardMaxElevation="5dp"
-//        app:cardBackgroundColor="#ffffff"
-//        app:cardPreventCornerOverlap="true"
-//        vh.card.setRadius(20);
-//        vh.card.setMaxCardElevation(15);
-//        vh.card.setCardBackgroundColor(Color.parseColor("#ffffff"));
-//        vh.card.setPreventCornerOverlap(true);
-//        vh.card.setRadius(20);
 
         this.onBackPressed();
         this.setContentView(view);
@@ -134,7 +125,7 @@ public class AskDialog extends Dialog {
         public TextView tvContext;
         public TextView tvClose;
         public TextView tvSubmit;
-        public RCRelativeLayout card;
+        public CardView card;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
@@ -142,7 +133,7 @@ public class AskDialog extends Dialog {
             this.tvContext = (TextView) rootView.findViewById(R.id.lz_context);
             this.tvClose = (TextView) rootView.findViewById(R.id.lz_close);
             this.tvSubmit = (TextView) rootView.findViewById(R.id.lz_submit);
-            this.card = (RCRelativeLayout) rootView.findViewById(R.id.lz_cardview);
+            this.card = (CardView) rootView.findViewById(R.id.lz_cardview);
         }
 
     }

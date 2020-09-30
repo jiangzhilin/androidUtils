@@ -1,9 +1,8 @@
-package com.wenbo.base
+package base
 
 import android.app.Activity
 import android.os.Handler
 import android.os.Message
-
 import java.lang.ref.WeakReference
 
 /**

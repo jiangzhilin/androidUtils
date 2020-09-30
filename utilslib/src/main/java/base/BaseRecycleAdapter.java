@@ -40,7 +40,7 @@ public class BaseRecycleAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(callBack!=null){
             callBack.bindData(holder,position);
             holder.itemView.setOnClickListener(new View.OnClickListener() {

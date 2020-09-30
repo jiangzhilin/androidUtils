@@ -8,6 +8,7 @@ package com.linzi.utilslib.utils;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.support.annotation.DrawableRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -48,7 +49,7 @@ public class NToast {
             CusToast.makeText(mContext,msg,time).show();
         }
     }
-    public static void showWithIcon(String msg,int icon) {
+    public static void showWithIcon(String msg,@DrawableRes int icon) {
         if (mContext != null) {
             CusToast.makeText(mContext,msg,icon,Toast.LENGTH_SHORT).show();
         }

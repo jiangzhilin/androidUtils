@@ -3,6 +3,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:gravity="bottom">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,15 +19,32 @@
             <LinearLayout
                 android:id="@+id/ll_pwd"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="70dp"
                 android:visibility="visible"
                 android:gravity="bottom|center_horizontal"
                 android:background="#fff"
                 android:orientation="vertical">
+                <com.linzi.utilslib.weight.PwdEditText
+                    android:id="@+id/pwdEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:enabled="false"
+                    app:count="6"
+                    app:circleRadius="5dp"
+                    app:circleColor="@color/black"
+                    app:height="50dp"
+                    app:lineColor="@color/colorAccent"
+                    app:stokesColor="@color/transparent"
+                    app:focusLineColor="@color/colorAccent"
+                    app:lineWidth="1dp"
+                    app:isDrawLine="true"
+                    app:isDrawCircle="true"
+                    app:focusStokeColor="@color/transparent"/>
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     android:background="@color/colorLightGrey">
                     <EditText
                         android:id="@+id/tv_pwd"
@@ -38,6 +56,7 @@
                         android:layout_margin="1dp"
                         android:editable="false"
                         android:focusable="false"
+                        android:visibility="visible"
                         android:letterSpacing="1"/>
                 </LinearLayout>
             </LinearLayout>

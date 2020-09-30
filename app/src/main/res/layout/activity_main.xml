@@ -27,6 +27,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="dialog"/>
+
+            <Button
+                android:id="@+id/bt_dialog2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dialog2"/>
             <Button
                 android:id="@+id/bt_keybord"
                 android:layout_width="wrap_content"

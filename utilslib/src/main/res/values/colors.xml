@@ -28,4 +28,7 @@
     <color name="blue_dark">#ff0099cc</color>
 
     <color name="color2">#484141</color>
+
+    <color name="transixColor">#55000000</color>
+
 </resources>

@@ -11,6 +11,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
@@ -261,11 +262,15 @@ public class UISwitchButton extends CheckBox {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-		canvas.saveLayerAlpha(mSaveLayerRectF, mAlpha, Canvas.MATRIX_SAVE_FLAG
-				| Canvas.CLIP_SAVE_FLAG | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG
-				| Canvas.FULL_COLOR_LAYER_SAVE_FLAG
-				| Canvas.CLIP_TO_LAYER_SAVE_FLAG);
-
+//		canvas.saveLayerAlpha(mSaveLayerRectF, mAlpha, Canvas.MATRIX_SAVE_FLAG
+//				| Canvas.CLIP_SAVE_FLAG | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG
+//				| Canvas.FULL_COLOR_LAYER_SAVE_FLAG
+//				| Canvas.CLIP_TO_LAYER_SAVE_FLAG);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			canvas.saveLayerAlpha(mSaveLayerRectF,mAlpha);
+		}else{
+			canvas.saveLayerAlpha(mSaveLayerRectF,mAlpha,Canvas.ALL_SAVE_FLAG);
+		}
 		// 绘制底部图片
 		canvas.drawBitmap(bmCurBgPic, 0, 0, mPaint);
 

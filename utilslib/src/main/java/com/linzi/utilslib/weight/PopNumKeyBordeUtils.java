@@ -78,12 +78,6 @@ public class PopNumKeyBordeUtils {
 
     public PopNumKeyBordeUtils show(View llParent) {
         if (mActivity != null) {
-//            View v = mActivity.getCurrentFocus();
-//            InputMethodManager imm = (InputMethodManager) mActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
-//            if (imm != null) {
-//                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-//            }
-
             View view = LayoutInflater.from(mActivity).inflate(R.layout.pop_layout_num_keybord, null);
             final ViewHolder vh = new ViewHolder(view);
             vh.llHide.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +106,8 @@ public class PopNumKeyBordeUtils {
             vh.btZero.setText("" + num_list[0]);
 
             vh.tvPwd.setMaxLines(Integer.valueOf(max_lenght));
+            vh.pwdEditText.setMaxLines(Integer.valueOf(max_lenght));
+            vh.pwdEditText.setCount(Integer.valueOf(max_lenght));
 
             if (mKeyListener != null) {
                 vh.btOne.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +119,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btOne.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btTwo.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +131,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btTwo.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btThree.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +143,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btThree.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btFour.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +155,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btFour.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btFive.setOnClickListener(new View.OnClickListener() {
@@ -167,6 +167,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btFive.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btSix.setOnClickListener(new View.OnClickListener() {
@@ -178,6 +179,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btSix.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btSeven.setOnClickListener(new View.OnClickListener() {
@@ -189,6 +191,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btSeven.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btEight.setOnClickListener(new View.OnClickListener() {
@@ -200,6 +203,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btEight.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btNine.setOnClickListener(new View.OnClickListener() {
@@ -211,6 +215,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btNine.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btPoint.setOnClickListener(new View.OnClickListener() {
@@ -222,6 +227,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(".");
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.btZero.setOnClickListener(new View.OnClickListener() {
@@ -233,6 +239,7 @@ public class PopNumKeyBordeUtils {
                         values_key.append(vh.btZero.getText().toString());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
                 vh.llDel.setOnClickListener(new View.OnClickListener() {
@@ -243,6 +250,7 @@ public class PopNumKeyBordeUtils {
                         }
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                     }
                 });
 
@@ -252,6 +260,7 @@ public class PopNumKeyBordeUtils {
                         values_key.delete(0, values_key.length());
                         mKeyListener.keyListener(values_key);
                         vh.tvPwd.setText(values_key);
+                        vh.pwdEditText.setText(values_key);
                         return false;
                     }
                 });
@@ -356,6 +365,7 @@ public class PopNumKeyBordeUtils {
         public LinearLayout llDel;
         public LinearLayout llSubmit;
         public ImageView ivBg;
+        public PwdEditText pwdEditText;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
@@ -376,6 +386,7 @@ public class PopNumKeyBordeUtils {
             this.llDel = (LinearLayout) rootView.findViewById(R.id.ll_del);
             this.llSubmit = (LinearLayout) rootView.findViewById(R.id.ll_submit);
             this.ivBg = (ImageView) rootView.findViewById(R.id.iv_bg);
+            this.pwdEditText = (PwdEditText) rootView.findViewById(R.id.pwdEdit);
         }
 
     }

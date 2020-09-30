@@ -1,21 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
-
-
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
-
-group = 'com.github.jiangzhilin'
-
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 27
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -30,16 +21,12 @@ android {
         }
     }
 
-
-
-//    android {
-//        lintOptions {
-//            abortOnError false
-//        }
-//    }
-
     lintOptions {
         abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -48,10 +35,34 @@ repositories {
     flatDir {
         dirs "libs"
     }
+    mavenCentral()
 }
 
+//上传到nexus
+apply plugin: 'maven'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "${NEXUS_REPO_URL}") {
+                authentication(userName: "${NEXUS_USERNAME}", password: "${NEXUS_PWD}")
+            }
+            pom.version = "0.0.01"
+            pom.artifactId = "andsdk"
+            pom.groupId = "com.linzi"
+        }
+    }
+}
+
+
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
     api 'com.github.bumptech.glide:glide:3.7.0'
     //权限
     api 'com.yanzhenjie:permission:2.0.0-rc12'
@@ -59,12 +70,10 @@ dependencies {
     api 'com.alibaba:fastjson:1.2.44'
     //banner视图
     api 'com.youth.banner:banner:1.4.10'
-    //基础框架
-    api 'org.xutils:xutils:3.3.36'
     //上下拉刷新
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-19'
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-19'//没有使用特殊Header，可以不加这行
-    api 'com.android.support:design:27.+'//版本随意（非必须，引用可以解决无法预览问题）
+//    api 'com.android.support:design:28.+'//版本随意（非必须，引用可以解决无法预览问题）
 
     //图片/视频选择、预览、编辑与拍照
     api 'com.github.guoxiaoxing:phoenix:1.0.15'
@@ -73,24 +82,22 @@ dependencies {
     //选填 - 视频压缩，开启功能：Phoenix.with().enableCompress(true)，获取结果：MediaEntity.getCompressPath()
     api 'com.github.guoxiaoxing:phoenix-compress-video:1.0.15'
 
-    api "com.airbnb.android:lottie:2.5.+"
-
-    testImplementation 'junit:junit:4.12'
+    api 'io.reactivex.rxjava2:rxjava:2.1.16'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    api 'com.squareup.okhttp3:okhttp:3.8.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    api 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
+    api 'com.blankj:utilcode:1.19.0'
+    api 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.android.support:multidex:1.+'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }
 
-
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-    repoName = 'jiangzhilin'  // 此字段为你的仓库名称，默认为"maven"，上传的时候记得检查，否则上传会报错
-    userOrg = 'jiangzhilin'  // bintray用户名
-    groupId = 'com.androidUtils'  // 模块目录
-    artifactId = 'androidUtils'  // 此字段为你的模块名称，唯一标识符
-    publishVersion = '1.0.17'  // 版本号
-    desc = 'android开发工具'
-    website = 'https://github.com/jiangzhilin/androidUtils'
-}
 
