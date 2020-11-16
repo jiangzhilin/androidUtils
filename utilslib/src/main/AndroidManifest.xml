@@ -6,10 +6,15 @@
                  android:label="@string/app_name"
                  android:supportsRtl="true">
         <activity android:name=".utils.PhotoPicker"/>
+<!--        <provider-->
+<!--            android:name=".utils.sphelper.SPContentProvider"-->
+<!--            android:authorities="${applicationId}.sphelper"-->
+<!--            android:process=":sphelper"-->
+<!--            android:exported="false" />-->
         <provider
-            android:name=".utils.sphelper.SPContentProvider"
-            android:authorities="${applicationId}.sphelper"
-            android:process=":sphelper"
+            android:name=".processCall.RWHelper$RWContentProvider"
+            android:authorities="${applicationId}.lock"
+            android:process=":lock"
             android:exported="false" />
         <provider
             android:name=".utils.SDKProvider"
