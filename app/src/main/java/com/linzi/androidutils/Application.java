@@ -25,14 +25,9 @@ public class Application extends android.app.Application {
         super.onCreate();
 
 //        Bugly.init(getApplicationContext(), "2be855fb36", false);
-        PhotoPicker.Companion.init(new ImageLoad() {
-            @Override
-            public void loadImage(Context context, ImageView imageView, String imagePath, int type) {
-                Glide.with(context)
-                        .load(imagePath)
-                        .into(imageView);
-            }
-        });
+        PhotoPicker.Companion.init((context, imageView, imagePath, type) -> Glide.with(context)
+                .load(imagePath)
+                .into(imageView));
     }
     static {
         //设置全局的Header构建器

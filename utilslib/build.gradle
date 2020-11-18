@@ -46,7 +46,7 @@ uploadArchives {
             repository(url: "${NEXUS_REPO_URL}") {
                 authentication(userName: "${NEXUS_USERNAME}", password: "${NEXUS_PWD}")
             }
-            pom.version = "0.0.01"
+            pom.version = "0.0.02"
             pom.artifactId = "andsdk"
             pom.groupId = "com.linzi"
         }
